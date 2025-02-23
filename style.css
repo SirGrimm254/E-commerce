@@ -191,6 +191,45 @@ h2 {
     gap: 10px;
 }
 
+.main-list {
+    font-size: 24px;
+}
+
+nav ol li a{
+    text-decoration: none;
+}
+
+.numbering {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.numbering li {
+    display: flex;
+    list-style: circle;
+    align-items: center;
+}
+
+.numbering li a {
+    position: relative;
+    color: black;
+}
+
+.numbering li a:hover {
+    color: blueviolet;
+    text-decoration: underline;
+}
+
+.numbering img {
+    height: 100px;
+    width: 100px;
+    align-items: center;
+}
+
+.numbering img:hover {
+    transform: scale(1.05);
+}
+
 footer {
     position: fixed;
     bottom: 0;
