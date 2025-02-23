@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gentle Car Dealers</title>
+        <link rel="stylesheet" href="formstyle.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+        <link rel="icon" type="image/png" href="images/logo-removebg-preview.png">
+    </head>
+    <body>
+        <header>
+            <div class="logo-title">
+                <img src="images/logo.png" alt="logo">
+                <h1>Gentle Car Dealers</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="products.html"><i class="fas fa-box"></i> Products</a></li>
+                    <li><a href="#"><i class="fas fa-wrench"></i> Services</a></li>
+                    <button class="navigation"><i class="fas fa-money-bill-wave"></i> SELL</button>
+                </ul>
+            </nav>
+        </header>
+        <section class="settings">
+            <div class="search">
+                <input type="search" placeholder="Search for Items on Sale">
+                <input type="submit"  value="🔍 Search">
+            </div>
+            <div class="selection">
+                <button onclick="window.location.href='login.html'">Login</button>
+                <label for="select">Language </label>
+                <select>
+                    <option>En-Us</option>
+                    <option>En-Uk</option>
+                </select>
+            </div>
+        </section>
+        <main>
+            <div class="form-apply">
+                <h2>Registration Form</h2>
+                <div class="form-content">
+                    <div class="name-row">
+                        <div class="input-group1">
+                            <label for="firstname">First Name</label>
+                            <input type="text" id="firstname" name="fname" required>
+                        </div>
+                        <div class="input-group1">
+                            <label for="lastname">Last Name</label>
+                            <input type="text" id="lastname" name="lname" required>
+                        </div>
+                        <div class="input-group1">
+                            <label for="middlename">Middle Name</label>
+                            <input type="text" id="middlename" name="mname">
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="identification">Id No./Passport</label>
+                        <input type="text" id="rangeInput" name="identification" oninput="validateRange(this, 0,10000000)" onkeypress="return isNumber(event)" maxlength="8" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Repeat Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="address">Physical Address</label>
+                        <input type="text" id="address" name="address" required>
+                    </div>
+                    <div class="dob">
+                        <label for="dob">Date of Birth</label>
+                        <div class="dob-selection">
+                            <select>
+                                <option>--Month--</option>
+                                <option>January</option>
+                                <option>February</option>
+                                <option>March</option>
+                                <option>April</option>
+                                <option>May</option>
+                                <option>June</option>
+                                <option>July</option>
+                                <option>August</option>
+                                <option>September</option>
+                                <option>October</option>
+                                <option>November</option>
+                                <option>December</option>
+                            </select>
+                            <select>
+                                <option>--Day--</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                                <option>11</option>
+                                <option>12</option>
+                                <option>13</option>
+                                <option>14</option>
+                                <option>15</option>
+                                <option>16</option>
+                                <option>17</option>
+                                <option>18</option>
+                                <option>19</option>
+                                <option>20</option>
+                                <option>21</option>
+                                <option>22</option>
+                                <option>23</option>
+                                <option>24</option>
+                                <option>25</option>
+                                <option>26</option>
+                                <option>27</option>
+                                <option>28</option>
+                                <option>29</option>
+                                <option>30</option>
+                                <option>31</option>
+                            </select>
+                            <select>
+                                <option>--Year--</option>
+                                <option>1970</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="btn">
+                        <input type="button" value="Register">
+                        <input type="button" value="Cancel">
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div class="contact">
+                <p>Contact Us</p>
+                <p><i class="fas fa-phone phone-icon"></i>  Phone number: +254748845075</p>
+                <p><i class="fas fa-envelope envelop-icon"></i> Email: Alexandergathendo666@gmail.com</p>
+            </div>
+            <div class="social-icons">
+                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://whatsapp.com" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <p class="rights">&copy; 2024 All Rights Reserved</p>
+        </footer>
+        <script src="formscript.js"></script>
+    </body>
+</html>

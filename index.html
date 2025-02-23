@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gentle Car Dealers</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+        <link rel="icon" type="image/png" href="images/logo-removebg-preview.png">
+    </head>
+    <body>
+        <header>
+            <div class="logo-title">
+                <img src="images/logo-removebg-preview.png" alt="logo">
+                <h1>Gentle Car Dealers</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="products.html"><i class="fas fa-box"></i> Products</a></li>
+                    <li><a href="#"><i class="fas fa-wrench"></i> Services</a></li>
+                    <button class="navigation"><i class="fas fa-money-bill-wave"></i> SELL</button>
+                </ul>
+            </nav>
+        </header>
+        <section class="settings">
+            <div class="search">
+                <input type="search" placeholder="Search for Items on Sale">
+                <input type="submit"  value="🔍 Search">
+            </div>
+            <div class="selection">
+                <input type="button" value="👤 Account" onclick="openPopup()">
+
+                <div id="popup" class="popup">
+                    <div class="popup-content">
+                        <p>Do you want to Register or Login?</p>
+                        <button onclick="window.location.href='registration.html'">Register</button>
+                        <button onclick="window.location.href='login.html'">Login</button>
+                        <button onclick="closePopup()">Cancel</button>
+                    </div>
+                </div>
+
+                <label for="select">Language </label>
+                <select>
+                    <option>En-Us</option>
+                    <option>En-Uk</option>
+                </select>
+            </div>
+        </section>
+        <main>
+            <div class="banner">
+                <img src="images/banner.jpeg" alt="banner">
+                <img src="images/banner4.jpeg" alt="banner4">
+                <img src="images/banner2.jpeg" alt="banner2">
+                <img src="images/banner3.jpeg" alt="banner3">
+                <img src="images/banner1.jpeg" alt="banner1">
+            </div>
+            <h2>Featured Products</h2>
+            <section class="products">
+                <div class="items">
+                    <img src="images/tires.png" alt="product1">
+                    <figcaption>Image1</figcaption>
+                    <p>Ksh 100.00</p>
+                    <button>Get More Info</button>
+                </div>
+                <div class="items">
+                    <img src="images/personal-removebg-preview.png" alt="product1">
+                    <figcaption>Car For Sale</figcaption>
+                    <p>Ksh 1,000,000.00</p>
+                    <button>Get More Info</button>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div class="contact">
+                <p>Contact Us</p>
+                <p><i class="fas fa-phone phone-icon"></i>  Phone number: +254748845075</p>
+                <p><i class="fas fa-envelope envelop-icon"></i> Email: Alexandergathendo666@gmail.com</p>
+            </div>
+            <div class="social-icons">
+                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://whatsapp.com" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <p class="rights">&copy; 2024 All Rights Reserved</p>
+        </footer>
+        <script src="script.js"></script>
+    </body>
+</html>
