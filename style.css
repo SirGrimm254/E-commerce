@@ -229,7 +229,7 @@ h2 {
     transform: scale(1.02);
 }
 
-.products {
+.cars {
     display: flex;
     gap: 10px;
 }
