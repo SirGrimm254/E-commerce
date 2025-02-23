@@ -21,7 +21,6 @@ header {
 .logo-title img {
     height: 70px;
     border-radius: 8px;
-    mix-blend-mode: multiply;
     position: relative;
     top: -10px;
 }
