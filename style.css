@@ -94,11 +94,11 @@ input[type="search"] {
     border-radius: 5px;
 }
 
-input {
+.settings input {
     border-radius: 5px;
 }
 
-input:hover {
+.settings input:hover {
     text-decoration: underline;
 }
 
@@ -162,21 +162,64 @@ input:hover {
 h2 {
     padding: 10px;
     font-size: 35px;
+    text-align: center;
+}
+
+.title {
+    text-align: center;
+    font-size: 24px;
+    padding: 5px;
+    margin-top: -20px;
+}
+
+.advice {
+    text-align: center;
+    margin-top: -25px;
+}
+
+.car-logo {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    object-fit: cover;
+    padding: 20px;
+}
+
+.car-logo img:hover {
+    transform: scale(1.02);
+}
+
+.subaru-logo img {
+    padding: 5px;
+    width: 150px;
+}
+
+.toyota-logo img {
+    padding: 5px;
+    width: 180px;
+}
+
+.nissan-logo img {
+    padding: 5px;
+    width: 120px;
 }
 
 .items {
     padding: 10px;
-    justify-items: center;
-    align-content: center;
     border-style: groove;
     border-color: aqua;
     border: auto;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
+    margin-left: 10px;
 }
 
 .items img {
-    width: 200px;
+    width: 100%;
+    height: 140px;
+    object-fit: contain;
     border-radius: 8px;
     transition: transform 0.3s ease-in-out;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
@@ -191,43 +234,9 @@ h2 {
     gap: 10px;
 }
 
-.main-list {
-    font-size: 24px;
-}
-
-nav ol li a{
-    text-decoration: none;
-}
-
-.numbering {
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.numbering li {
-    display: flex;
-    list-style: circle;
-    align-items: center;
-}
-
-.numbering li a {
+.description {
     position: relative;
-    color: black;
-}
-
-.numbering li a:hover {
-    color: blueviolet;
-    text-decoration: underline;
-}
-
-.numbering img {
-    height: 100px;
-    width: 100px;
-    align-items: center;
-}
-
-.numbering img:hover {
-    transform: scale(1.05);
+    justify-content: left;
 }
 
 footer {
