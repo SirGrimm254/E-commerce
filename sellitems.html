@@ -37,30 +37,47 @@
             </div>
         </section>
         <main>
-            <div class="form-apply">
-                <h2>Sell your Products</h2>
+            <div class="sell-form">
+                <h2>SELL YOUR CAR</h2>
                 <div class="item-content">
                     <div class="itempic">
-                        <label for="itemimage">Item Picture</label>
-                        <input type="file" id="itemimage" accept="image/*" required>
+                        <label for="imageUpload">Car Photo</label>
+                        <input type="file" id="imageUpload" accept="image/*" required>
+                        <img id="preview">
                     </div>
                     <div class="itemcontent">
-                        <label for="itemname">Item Name</label>
+                        <label for="itemname">Car Name</label>
                         <input type="text" id="itemname" name="itemname" required>
-                    </div>
-                    <div class="itemcontent">
+                
+                        <label for="itemname">Make</label>
+                        <input type="text" id="itemname" name="itemname" required>
+                    
+                        <label for="itemname">Year</label>
+                        <input type="text" id="itemname" name="itemname" required>
+                    
+                        <label for="itemname">License Plate</label>
+                        <input type="text" id="itemname" name="itemname" required>
+                    
                         <label for="description">Item's Description</label>
                         <textarea id="description" rows="6" placeholder="Enter Items Description" required></textarea>
+                    
+                        <label for="contact">Contact</label>
+                        <input type="text" id="contact" name="contact">                       
                     </div>
-                    <div class="itemcontent">
-                        <label for="contact">Who to Contact</label>
-                        <input type="text" id="contact" name="contact">
-                    </div>
-                    <div class="btn">
-                        <input type="button" value="Post">
-                        <input type="button" value="Clear" onclick="window.location.href='sellitems.html'">
-                        <input type="button" value="Cancel" onclick="window.location.href='index.html'">
-                    </div>
+                </div>
+                <div class="conditions">
+                    <label for="text"> I agree to receive marketing from Gentle Car Dealers</label> 
+                    <input type="radio" name="agree" value="I agree">I agree                        
+                    <input type="radio" name="disagree" value="I don't agree">I don't agree 
+                </div>
+                <p>Kindly note that these email include but are not limited to newsletters, promotional offers and announcements from MotorHub. Each email you receive from us provides a one-click method to unsubscribe from the distribution list.</p>
+                <div class="checkbox">
+                    <input type="checkbox" name="check" value="check">  I have read and agree to Gentle Cars Dealers Privacy Policies and Terms of Use
+                </div>
+                <div class="form-btn">
+                    <input type="button" value="Post">
+                    <input type="button" value="Clear" onclick="window.location.href='sellitems.html'">
+                    <input type="button" value="Cancel" onclick="window.location.href='index.html'">
                 </div>
             </div>
         </main>

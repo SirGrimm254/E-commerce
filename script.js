@@ -12,3 +12,16 @@ window.onclick = function(event) {
         closePopup();
     }
 }
+
+document.getElementById("imageUpload").addEventListener("change", function(event) {
+    let file = event.target.files[0];
+    if (file) {
+        let reader = new FileReader();
+        reader.onload = function(e) {
+            let img = document.getElementById("preview");
+            img.src - e.target.result;
+            img.style.display = "block";
+        };
+        reader.readAsDataURL(file);
+    }
+});
