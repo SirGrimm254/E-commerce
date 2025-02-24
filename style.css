@@ -39,7 +39,6 @@ nav ul {
     align-content: flex-end;
     list-style: none;
     gap: 20px;
-    margin-right: 100px;
     position: relative;
 }
 
@@ -84,6 +83,7 @@ nav ul li a:hover {
     border-radius: 8px;
     background-color: chartreuse;
     color: rgb(155, 10, 10);
+    margin-right: 50px;
 }
 
 .settings {
