@@ -295,7 +295,7 @@ h3 {
 
 .btn {
     display: flex;
-    gap: 20px;
+    gap: 10px;
     margin-top: auto;
     padding: 10px;
 }
