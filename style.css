@@ -4,6 +4,7 @@ body {
     padding: 0;
     overflow-x: hidden;
     margin-bottom: 100%;
+    max-width: 100%;
 }
 
 header {
@@ -34,6 +35,8 @@ h1 {
 
 nav ul {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     align-content: flex-end;
     list-style: none;
     gap: 20px;
@@ -130,7 +133,11 @@ input[type="search"] {
 }
 
 .selection {
+    display: flex;
+    flex-direction: column;
     margin-right: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .popup {
@@ -339,8 +346,3 @@ footer {
     color: white;
 }
 
-@media (max-width: 768px) {
-    .menu {
-        flex-direction: column;
-    }
-}
