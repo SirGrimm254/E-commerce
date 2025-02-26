@@ -19,6 +19,8 @@ header {
     align-items: center;
     background-color: blueviolet;
     flex-wrap: wrap;
+    height: 60px;
+    overflow: hidden;
 }
 
 .logo-title {
@@ -98,7 +100,6 @@ nav ul li a:hover {
     header {
         flex-direction: column;
         text-align: center;
-        max-height: 400px;
     }
 
     .logo-title {
@@ -116,19 +117,6 @@ nav ul li a:hover {
     .navigation {
         width: 100%;
         justify-content: center;
-    }
-
-    .settings {
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .search {
-        width: 100%;
-    }
-
-    #account-btn {
-        width: 100%;
     }
 }
 
@@ -244,23 +232,23 @@ nav ul li a:hover {
     }
 
     .search {
-        width: 100dvw;
+        width: 100%;
         justify-content: center;
     }
 
     .selection {
         flex-direction: column;
         align-items: center;
-        width: 100dvw;
+        width: 100%;
     }
 
     #account-section, .select-container {
-        width: 100dvw;
+        width: 100%;
         text-align: center;
     }
 
     #account-btn, #logout-btn {
-        width: 100dvw;
+        width: 100%;
     }
 }
 
