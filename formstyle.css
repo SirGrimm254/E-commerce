@@ -357,125 +357,195 @@ h2 {
     justify-items: center;
     align-content: center;
 }
-
-.form-content {
-    font-size: 20px;
-    font-weight: bold;
-    display: flex-start;
-    flex-direction: column;
-    padding: 20px;
-    background: rgba(136, 44, 44, 0.5);
-    border-radius: 8px;
-    width: 800px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.8);
-    margin-bottom: 20%;
-    position: relative;
-    overflow: hidden;
-}
-
-.form-content::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url("images/banner1-removebg-preview.png");
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    filter: blur(1px);
-    z-index: -1;
-}
-
-.input-group {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-bottom: 20px;
-    margin-left: 30px;
-}
-
-.input-group1 {
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-}
-
-.name-row {
-    display: flex;
-    margin-bottom: 20px;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-.input-group1 label {
-    margin-bottom: 10px;
-    text-align: left;
-}
-
-.input-group1 input {
-    width: 200px;
-    padding: 10px;
-    border-radius: 8px;
-}
-
-.input-group label {
-    width: 40%;
-    text-align: left;
-}
-
-.input-group input {
-    width: 700px;
-    padding: 10px;
-    border-radius: 8px;
-}
-
-.input-group input:hover, .input-group1 input:hover {
-    background-color: grey;
-}
-
-.dob {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-    text-align: left;
-    margin-left: 30px;
-}
-
-.dob-selection {
-    display: flex;
-    flex-direction: row;
-    padding: 10px;
-    justify-content: space-between;
-    width: 700px;
-}
-
-.dob-selection select {
-    padding: 5px;
-    border-radius: 5px;
-    min-width: 150px;
-}
-
-.btn {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
-}
-
-.btn input {
-    width: 100px;
-    height: 40px;
-    border-radius: 8px;
-    font-size: 17px;
-}
-
-.btn input:hover {
-    text-decoration: underline;
-    color: white;
-    background-color: black;
-}
+  
+  /* Form container (full width on smaller screens) */
+  .form-apply {
+      text-align: center;
+      position: relative;
+      width: 100%;
+      min-height: 100%;
+      background-color: rgba(110, 110, 110, 0.5);
+      padding: 20px;
+  }
+  
+  /* Main form content box */
+  .form-content {
+      font-size: 20px;
+      font-weight: bold;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      background: rgba(136, 44, 44, 0.5);
+      border-radius: 8px;
+      max-width: 800px;     /* Maximum width on large screens */
+      width: 100%;          /* Full width on smaller screens */
+      margin: 0 auto 20px auto;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.8);
+      position: relative;
+      overflow: hidden;
+  }
+  
+  /* Background overlay for the form */
+  .form-content::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("images/banner1-removebg-preview.png");
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      filter: blur(1px);
+      z-index: -1;
+  }
+  
+  /* Input groups for label/input pairs */
+  .input-group,
+  .input-group1 {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+      /* Remove left margin on smaller screens */
+      margin-left: 30px;
+  }
+  
+  /* For multiple name fields, allow wrapping */
+  .name-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      align-items: center;
+      margin-bottom: 20px;
+  }
+  
+  /* Input group labels */
+  .input-group label,
+  .input-group1 label {
+      margin-bottom: 10px;
+      text-align: left;
+  }
+  
+  /* Input fields in the single group */
+  .input-group input {
+      width: 100%;
+      max-width: 700px;   /* Limit on larger screens */
+      padding: 10px;
+      border-radius: 8px;
+  }
+  
+  /* Input fields for name row */
+  .input-group1 input {
+      width: 100%;
+      max-width: 200px;   /* Each name field */
+      padding: 10px;
+      border-radius: 8px;
+  }
+  
+  /* Hover effect on inputs */
+  .input-group input:hover,
+  .input-group1 input:hover {
+      background-color: grey;
+  }
+  
+  /* Date of Birth container */
+  .dob {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+      text-align: left;
+      margin-left: 30px;
+  }
+  
+  /* DOB selection styling */
+  .dob-selection {
+      display: flex;
+      flex-direction: row;
+      padding: 10px;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 700px;
+  }
+  
+  .dob-selection select {
+      padding: 5px;
+      border-radius: 5px;
+      min-width: 150px;
+  }
+  
+  /* Button container */
+  .btn {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+  }
+  
+  /* Buttons styling */
+  .btn input {
+      width: 100%;
+      max-width: 120px;
+      height: 40px;
+      border-radius: 8px;
+      font-size: 17px;
+  }
+  
+  .btn input:hover {
+      text-decoration: underline;
+      color: white;
+      background-color: black;
+  }
+  
+  /* Responsive adjustments */
+  @media screen and (max-width: 768px) {
+    /* Reduce left margins */
+    .input-group, .dob {
+        margin-left: 10px;
+    }
+    
+    .name-row {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .dob-selection {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+    
+    .dob-selection select {
+        min-width: 100%;
+    }
+    
+    /* Reduce overall font size for smaller screens */
+    .form-content {
+        font-size: 18px;
+        padding: 15px;
+    }
+    
+    .btn input {
+        font-size: 16px;
+        padding: 8px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .form-content {
+        font-size: 16px;
+        padding: 10px;
+    }
+    
+    .input-group input, .input-group1 input {
+        padding: 8px;
+    }
+    
+    .btn input {
+        font-size: 14px;
+        padding: 8px;
+    }
+  }  
 
 footer {
     position: fixed;
