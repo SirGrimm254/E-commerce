@@ -94,7 +94,37 @@
                                 }
                             });
                         }
-                    });            
+                    });
+                    
+                    document.addEventListener("DOMContentLoaded", function(){
+                        const slides = document.querySelector(".slides");
+                        const images = document.querySelectorAll(".slides img");
+                        const prevBtn = document.querySelector(".prev");
+                        const nextBtn = document.querySelector(".next");
+                        let currentIndex = 0;
+                        const totalImages = images.length;
+                        
+                        function updateSlider(){
+                            slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+                        }
+                        
+                        nextBtn.addEventListener("click", function(){
+                            currentIndex = (currentIndex + 1) % totalImages;
+                            updateSlider();
+                        });
+                        
+                        prevBtn.addEventListener("click", function(){
+                            currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+                            updateSlider();
+                        });
+                        
+                        // Auto cycle every 5 seconds
+                        setInterval(function(){
+                            currentIndex = (currentIndex + 1) % totalImages;
+                            updateSlider();
+                        }, 5000);
+                    });
+
                 </script>
                 
                 <div class="select-container">
@@ -108,44 +138,50 @@
         </section>
         <main>
             <div class="banner">
-                <img src="images/banner.jpeg" alt="banner">
-                <img src="images/banner4.jpeg" alt="banner4">
-                <img src="images/banner2.jpeg" alt="banner2">
-                <img src="images/banner3.jpeg" alt="banner3">
-                <img src="images/banner1.jpeg" alt="banner1">
-            </div>
-            <h2>LEADING AND TRUSTED CAR BRANDS IN KENYA</h2>
-            <p class="title">YOU CAN SHOP BY BRAND</p>
-            <p class="advice">Click on any brand logo to shop</p>
-            <div class="car-logo">
-                <div class="subaru-logo">
-                    <a href="cars.html#subaru"><img src="images/subaru-removebg-preview.png" alt="Subaru logo"></a>
+                <div class="slides">
+                    <img src="images/banner.jpeg" alt="banner">
+                    <img src="images/banner4.jpeg" alt="banner4">
+                    <img src="images/banner2.jpeg" alt="banner2">
+                    <img src="images/banner3.jpeg" alt="banner3">
+                    <img src="images/banner1.jpeg" alt="banner1">
                 </div>
-                <div class="toyota-logo">
-                    <a href="cars.html#toyota"><img src="images/toyota-removebg-preview.png" alt="Toyota logo"></a>
+                <button class="prev">&#10094;</button>
+                <button class="next">&#10095;</button>
+              </div>
+            <section class="page">              
+                <h2>LEADING AND TRUSTED CAR BRANDS IN KENYA</h2>
+                <p class="title">YOU CAN SHOP BY BRAND</p>
+                <p class="advice">Click on any brand logo to shop</p>
+                <div class="car-logo">
+                    <div class="subaru-logo">
+                        <a href="cars.html#subaru"><img src="images/subaru-removebg-preview.png" alt="Subaru logo"></a>
+                    </div>
+                    <div class="toyota-logo">
+                        <a href="cars.html#toyota"><img src="images/toyota-removebg-preview.png" alt="Toyota logo"></a>
+                    </div>
+                    <div class="nissan-logo">
+                        <a href="cars.html"><img src="images/nissan-removebg-preview.png" alt="Nissan logo"></a>
+                    </div>
+                    <div class="toyota-logo">
+                        <a href="cars.html"><img src="images/bmw-removebg-preview.png" alt="BMW logo"></a>
+                    </div>
+                    <div class="subaru-logo">
+                        <a href="cars.html"><img src="images/mitsubishi-removebg-preview.png" alt="Mitsubishi logo"></a>
+                    </div>
+                    <div class="nissan-logo">
+                        <a href="cars.html#benz"><img src="images/benz-removebg-preview.png" alt="Mercedes Benz logo"></a>
+                    </div>
+                    <div class="subaru-logo">
+                        <a href="cars.html"><img src="images/audi-removebg-preview.png" alt="Audi logo"></a>
+                    </div>
+                    <div class="toyota-logo">
+                        <a href="cars.html"><img src="images/mazda-removebg-preview.png" alt="Mazda logo"></a>
+                    </div>
+                    <div class="subaru-logo">
+                        <a href="cars.html"><img src="images/range-removebg-preview.png" alt="Range Rover logo"></a>
+                    </div>
                 </div>
-                <div class="nissan-logo">
-                    <a href="cars.html"><img src="images/nissan-removebg-preview.png" alt="Nissan logo"></a>
-                </div>
-                <div class="toyota-logo">
-                    <a href="cars.html"><img src="images/bmw-removebg-preview.png" alt="BMW logo"></a>
-                </div>
-                <div class="subaru-logo">
-                    <a href="cars.html"><img src="images/mitsubishi-removebg-preview.png" alt="Mitsubishi logo"></a>
-                </div>
-                <div class="nissan-logo">
-                    <a href="cars.html#benz"><img src="images/benz-removebg-preview.png" alt="Mercedes Benz logo"></a>
-                </div>
-                <div class="subaru-logo">
-                    <a href="cars.html"><img src="images/audi-removebg-preview.png" alt="Audi logo"></a>
-                </div>
-                <div class="toyota-logo">
-                    <a href="cars.html"><img src="images/mazda-removebg-preview.png" alt="Mazda logo"></a>
-                </div>
-                <div class="subaru-logo">
-                    <a href="cars.html"><img src="images/range-removebg-preview.png" alt="Range Rover logo"></a>
-                </div>
-            </div>
+            </section>
             <section>
                 <h2>FEATURED CARS ON SALE</h2>
                 <div class="cars">
