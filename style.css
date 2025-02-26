@@ -159,6 +159,10 @@ nav ul li a:hover {
     }    
 }
 
+.highlight {
+    background-color: yellow;
+}
+
 .search {
     display: flex;
     padding: 10px;

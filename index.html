@@ -34,9 +34,10 @@
         </header>
         <section class="settings">
             <div class="search">
-                <input type="search" placeholder="Search for Items on Sale">
-                <input type="submit"  value="🔍 Search">
-            </div>
+                <input type="search" id="pageSearch" placeholder="Search this page">
+                <input type="button" value="Search" onclick="searchPage()">
+                <input type="button" value="Clear" onclick="clearSearch()" />
+              </div>              
             <div class="selection">
                 <div id="account-section">
                     <input type="button" id="account-btn" value="👤 Account" onclick="openPopup()">
