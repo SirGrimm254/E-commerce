@@ -320,9 +320,24 @@ nav ul li a:hover {
     height: 520px; /* Adjust banner height as needed */
 }
 
+.banner-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    filter: blur(10px); /* Adjust the blur amount */
+    z-index: 1;
+ }
+  
+  /* Slides container (placed above background) */
 .slides {
     display: flex;
-    transition: transform 1s ease; /* Smooth transition */
+    transition: transform 1s ease;
+    position: relative;
+    z-index: 2;
 }
 
 .slides img {
@@ -381,10 +396,10 @@ nav ul li a:hover {
 }
 
 .page {
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.9);
+    box-shadow: 0 -9px 10px rgba(0, 0, 0, 0.9);
     padding: 10px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
 
 

@@ -101,11 +101,15 @@
                         const images = document.querySelectorAll(".slides img");
                         const prevBtn = document.querySelector(".prev");
                         const nextBtn = document.querySelector(".next");
+                        const bannerBg = document.querySelector(".banner-bg");
                         let currentIndex = 0;
                         const totalImages = images.length;
                         
                         function updateSlider(){
+                            // Update the slide position
                             slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+                            // Update the blurred background image to match the current slide
+                            bannerBg.style.backgroundImage = `url('${images[currentIndex].src}')`;
                         }
                         
                         nextBtn.addEventListener("click", function(){
@@ -123,6 +127,9 @@
                             currentIndex = (currentIndex + 1) % totalImages;
                             updateSlider();
                         }, 5000);
+
+                        // Initialize the background for the first image
+                        updateSlider();
                     });
 
                 </script>
@@ -138,6 +145,10 @@
         </section>
         <main>
             <div class="banner">
+                <!-- Blurred Background Layer -->
+                <div class="banner-bg"></div>
+              
+                <!-- Slides Container -->
                 <div class="slides">
                     <img src="images/banner.jpeg" alt="banner">
                     <img src="images/banner4.jpeg" alt="banner4">
@@ -147,7 +158,7 @@
                 </div>
                 <button class="prev">&#10094;</button>
                 <button class="next">&#10095;</button>
-              </div>
+            </div>              
             <section class="page">              
                 <h2>LEADING AND TRUSTED CAR BRANDS IN KENYA</h2>
                 <p class="title">YOU CAN SHOP BY BRAND</p>
