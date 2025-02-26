@@ -12,7 +12,6 @@ body {
 }
 
 header {
-    gap: 200px;
     padding: 10px;
     display: flex;
     justify-content: space-between;
@@ -100,7 +99,8 @@ nav ul li a:hover {
     header {
         flex-direction: column;
         text-align: center;
-        height: 200px;
+        height: 8vh;
+        min-height: 45px;
     }
 
     .logo-title {
