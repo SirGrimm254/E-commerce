@@ -98,7 +98,7 @@ nav ul li a:hover {
     header {
         flex-direction: column;
         text-align: center;
-        max-height: 200px;
+        max-height: 400px;
     }
 
     .logo-title {
@@ -115,10 +115,16 @@ nav ul li a:hover {
 
     .navigation {
         width: 100%;
+        justify-content: center;
     }
 
     .settings {
+        flex-direction: column;
         justify-content: center;
+    }
+
+    .search {
+        width: 100%;
     }
 }
 
