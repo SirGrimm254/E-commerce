@@ -19,7 +19,16 @@
                     <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
                     <li><a href="cars.html"><i class="fas fa-car"></i> Cars</a></li>
                     <li><a href="#"><i class="fas fa-wrench"></i> Services</a></li>
-                    <button class="navigation" onclick="window.location.href='sellitems.html'"><i class="fas fa-money-bill-wave"></i> SELL</button>
+                    <button id="navigation" class="navigation" onclick="openPopup1()"><i class="fas fa-money-bill-wave"></i> SELL</button>
+                    
+                    <div id="popup1" class="popup1">
+                        <div class="popup1-content">
+                            <p>You have to be Registered or Logged In to Sell your Car?</p>
+                            <button onclick="redirectToSell()">Register</button>
+                            <button onclick="window.location.href='login.html'">Login</button>
+                            <button onclick="closePopup1()">Cancel</button>
+                        </div>
+                    </div>
                 </ul>
             </nav>
         </header>
@@ -29,16 +38,65 @@
                 <input type="submit"  value="🔍 Search">
             </div>
             <div class="selection">
-                <input type="button" value="👤 Account" onclick="openPopup()">
-
-                <div id="popup" class="popup">
-                    <div class="popup-content">
-                        <p>Do you want to Register or Login?</p>
-                        <button onclick="window.location.href='registration.html'">Register</button>
-                        <button onclick="window.location.href='login.html'">Login</button>
-                        <button onclick="closePopup()">Cancel</button>
+                <div id="account-section">
+                    <input type="button" id="account-btn" value="👤 Account" onclick="openPopup()">
+                    <div id="popup" class="popup">
+                        <div class="popup-content">
+                            <p>Do you want to Register or Login?</p>
+                            <button onclick="window.location.href='registration.html'">Register</button>
+                            <button onclick="window.location.href='login.html'">Login</button>
+                            <button onclick="closePopup()">Cancel</button>
+                        </div>
                     </div>
+
+                    <span id="user-info" style="display: none;">
+                        <strong id="username-display"></strong>
+                        <button id="logout-btn">Logout</button>
+                    </span>
                 </div>
+                
+                <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+                        const loggedInUser = localStorage.getItem("loggedInUser");
+                        const accountBtn = document.getElementById("account-btn");
+                        const userInfo = document.getElementById("user-info");
+                        const usernameDisplay = document.getElementById("username-display");
+                        const logoutBtn = document.getElementById("logout-btn");
+
+                        if (loggedInUser) {
+                            // Hide Account button and show username + Logout button
+                            accountBtn.style.display = "none";
+                            userInfo.style.display = "inline";
+                            usernameDisplay.textContent = loggedInUser;
+                        } else {
+                            // Show Account button if no user is logged in
+                            accountBtn.style.display = "inline";
+                            userInfo.style.display = "none";
+                        }
+
+                        // Logout function
+                        logoutBtn.addEventListener("click", function () {
+                            localStorage.removeItem("loggedInUser"); // Clear session
+                            location.reload(); // Reload page to show "Account" button again
+                        });
+                    });
+
+                    document.addEventListener("DOMContentLoaded", function () {
+                        const navigationBtn = document.getElementById("navigation");
+                        
+                        if (navigationBtn) {
+                            navigationBtn.addEventListener("click", function() {
+                                const loggedInUser = localStorage.getItem("loggedInUser");
+                                if (loggedInUser) {
+                                    window.location.href = "sellitems.html";
+                                } else {
+                                    openPopup1();
+                                }
+                            });
+                        }
+                    });            
+                </script>
+                
                 <div class="select-container">
                     <label for="select">Language </label>
                     <select>

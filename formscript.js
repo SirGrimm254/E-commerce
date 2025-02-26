@@ -53,10 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    
-
     document.querySelector(".btn input[type='button']").addEventListener("click", function () {
-
         const enteredUsername = document.getElementById("username").value;
         const enteredPassword = document.getElementById("password").value;
 
@@ -64,10 +61,36 @@ document.addEventListener("DOMContentLoaded", function () {
         const storedPassword = localStorage.getItem("password");
 
         if (enteredUsername === storedUsername && enteredPassword === storedPassword) {
+            localStorage.setItem("loggedInUser", enteredUsername); // Save session
             alert("Login Successful!");
-            window.location.href = "index.html";
+            window.location.href = "index.html"; // Redirect back to home page
         } else {
             alert("Invalid username or password!");
         }
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const loggedInUser = localStorage.getItem("loggedInUser");
+    const accountBtn = document.getElementById("account-btn");
+    const userInfo = document.getElementById("user-info");
+    const usernameDisplay = document.getElementById("username-display");
+    const logoutBtn = document.getElementById("logout-btn");
+
+    if (loggedInUser) {
+        // Hide Account button and show username + Logout button
+        accountBtn.style.display = "none";
+        userInfo.style.display = "inline";
+        usernameDisplay.textContent = loggedInUser;
+    } else {
+        // Show Account button if no user is logged in
+        accountBtn.style.display = "inline";
+        userInfo.style.display = "none";
+    }
+
+    // Logout function
+    logoutBtn.addEventListener("click", function () {
+        localStorage.removeItem("loggedInUser"); // Clear session
+        location.reload(); // Reload page to show "Account" button again
     });
 });

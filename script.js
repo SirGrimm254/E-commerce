@@ -13,6 +13,21 @@ window.onclick = function(event) {
     }
 }
 
+function openPopup1() {
+    document.getElementById("popup1").style.display = "flex";
+}
+
+function closePopup1() {
+    document.getElementById("popup1").style.display = "none";
+}
+
+window.onclick = function(event) {
+    var popup1 = document.getElementById('popup1');
+    if (event.target === popup1) {
+        closePopup1();
+    }
+}
+
 document.getElementById("imageUpload").addEventListener("change", function(event) {
     let file = event.target.files[0];
     if (file) {
@@ -25,3 +40,5 @@ document.getElementById("imageUpload").addEventListener("change", function(event
         reader.readAsDataURL(file);
     }
 });
+
+
