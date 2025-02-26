@@ -126,26 +126,28 @@
 
                     document.addEventListener("DOMContentLoaded", function () {
                     const settings = document.querySelector(".settings");
-                    const stickyOffset = settings.offsetTop; // Initial top position of settings
+                    const stickyOffset = settings.offsetTop; // original top position
                     let lastScrollY = window.scrollY;
-                    
+                    const threshold = 5; // change threshold (in pixels) if needed
+
                     window.addEventListener("scroll", function () {
                         const currentScrollY = window.scrollY;
                         
-                        // When we pass the original settings position, add the sticky class.
+                        // If we've scrolled past the original position, add sticky class
                         if (currentScrollY >= stickyOffset) {
                         settings.classList.add("sticky");
-                        // If scrolling down, keep it visible.
-                        if (currentScrollY > lastScrollY) {
-                            settings.style.transform = "translateY(0)";
-                            settings.style.opacity = "1";
-                        } else {
-                            // If scrolling up, slide it out (hide it)
+
+                        if (currentScrollY < lastScrollY - threshold) {
+                            // Scrolling up (current less than previous by more than threshold) → hide header
                             settings.style.transform = "translateY(-100%)";
                             settings.style.opacity = "0";
+                        } else if (currentScrollY > lastScrollY + threshold) {
+                            // Scrolling down → show header
+                            settings.style.transform = "translateY(0)";
+                            settings.style.opacity = "1";
                         }
                         } else {
-                        // If before the sticky point, remove sticky behavior.
+                        // Before reaching the sticky point, remove sticky class and ensure it's visible
                         settings.classList.remove("sticky");
                         settings.style.transform = "translateY(0)";
                         settings.style.opacity = "1";
@@ -155,6 +157,27 @@
                         });
                     });
 
+                    document.addEventListener("DOMContentLoaded", function () {
+                    const footer = document.querySelector("footer");
+                    let lastScrollY = window.scrollY;
+                    const threshold = 5; // pixels to determine significant scroll
+
+                    window.addEventListener("scroll", function () {
+                        let currentScrollY = window.scrollY;
+
+                        if (currentScrollY > lastScrollY + threshold) {
+                        // Scrolling down → hide footer
+                        footer.style.transform = "translateY(100%)";
+                        footer.style.opacity = "0";
+                        } else if (currentScrollY < lastScrollY - threshold) {
+                        // Scrolling up → show footer
+                        footer.style.transform = "translateY(0)";
+                        footer.style.opacity = "1";
+                        }
+                        
+                        lastScrollY = currentScrollY;
+                        });
+                    });
                 </script>
                 
                 <div class="select-container">

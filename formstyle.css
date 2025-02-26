@@ -126,17 +126,27 @@ nav ul li a:hover {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    position: relative;
-    top: -20px;
     background-color: chocolate;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     border-bottom-right-radius: 3px;
     border-bottom-left-radius: 3px;
-    transform: translateY(-100%);
-    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    position: relative; /* Default state */
+    z-index: 100; /* Adjust as needed */
     animation: slideIn 2s ease-out forwards;
-    z-index: 1;
+    
 }
+  
+  /* Sticky style when the section reaches the top */
+.settings.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* Optionally add background and shadow for readability */
+    background-color: chocolate;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}  
 
 @keyframes slideIn {
     from {
@@ -477,6 +487,8 @@ footer {
     align-items: center;
     background-color: blueviolet;
     color: bisque;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 1000;
 }
 
 .contact {
