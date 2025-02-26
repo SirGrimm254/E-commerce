@@ -427,7 +427,10 @@ nav ul li a:hover {
     .prev, .next {
         font-size: 18px;
         padding: 8px;
+        border: none;
+        background: rgba(161, 159, 161, 0.5);
     }
+
 }
 
 .page {
