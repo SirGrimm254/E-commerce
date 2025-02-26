@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Times New Roman', Times, serif;
     margin: 0;
@@ -8,13 +12,14 @@ body {
 }
 
 header {
-    gap: 200px;
     padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: blueviolet;
     flex-wrap: wrap;
+    height: auto;
+    overflow: hidden;
 }
 
 .logo-title {
@@ -90,10 +95,12 @@ nav ul li a:hover {
     cursor: pointer;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 480px) {
     header {
         flex-direction: column;
         text-align: center;
+        height: 8vh;
+        min-height: 45px;
     }
 
     .logo-title {
@@ -101,12 +108,16 @@ nav ul li a:hover {
     }
 
     nav ul {
-        flex-direction: column;
+        display: flex;
         gap: 10px;
+        padding: 10px;
+        justify-content: center;
+        align-items: center;
     }
 
     .navigation {
         width: 100%;
+        justify-content: center;
     }
 }
 
@@ -124,6 +135,7 @@ nav ul li a:hover {
     transform: translateY(-100%);
     opacity: 0;
     animation: slideIn 2s ease-out forwards;
+    z-index: 1;
 }
 
 @keyframes slideIn {
@@ -150,6 +162,7 @@ nav ul li a:hover {
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    max-width: 1005;
 }
 
 .search input[type="submit"] {
@@ -159,6 +172,7 @@ nav ul li a:hover {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    max-width: 100%;
 }
 
 #account-section {
@@ -172,6 +186,7 @@ nav ul li a:hover {
     font-size: 16px;
     cursor: pointer;
     border-radius: 5px;
+    max-width: 100%;
 }
 
 /* User Info */
@@ -239,20 +254,21 @@ nav ul li a:hover {
     }
 }
 
-.popup {
+.popup { 
     display: none;
     position: fixed;
     left: 0;
     top: 0;
     width: 100%;
-    height: 50vw;
+    height: 100vh; /* Consider using 100% or 100vh for full coverage */
     background: rgba(161, 159, 161, 0.5);
     justify-content: center;
     align-items: center;
-    margin-bottom: -400px;
     padding: 10px;
-    z-index: 10000 !important;
+    z-index: 10000; /* Already high enough */
+    /* Remove margin-bottom: -400px; */
 }
+
 
 .popup-content {
     font-size: 24px;
@@ -264,7 +280,6 @@ nav ul li a:hover {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.9);
     width: 300px;
     z-index: 10001;
-    position: relative;
 }
 
 .popup-content button {
@@ -275,6 +290,44 @@ nav ul li a:hover {
 }
 
 .popup-content button:hover {
+    background-color: chocolate;
+    text-decoration: underline;
+}
+
+.popup1 { 
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh; /* Consider using 100% or 100vh for full coverage */
+    background: rgba(161, 159, 161, 0.5);
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    z-index: 10000; /* Already high enough */
+    /* Remove margin-bottom: -400px; */
+}
+
+.popup1-content {
+    font-size: 24px;
+    background: blueviolet;
+    color: whitesmoke;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.9);
+    width: 300px;
+}
+
+.popup1-content button {
+    margin: 10px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: bolder;
+}
+
+.popup1-content button:hover {
     background-color: chocolate;
     text-decoration: underline;
 }

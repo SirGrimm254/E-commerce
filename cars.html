@@ -40,14 +40,6 @@
             <div class="selection">
                 <div id="account-section">
                     <input type="button" id="account-btn" value="👤 Account" onclick="openPopup()">
-                    <div id="popup" class="popup">
-                        <div class="popup-content">
-                            <p>Do you want to Register or Login?</p>
-                            <button onclick="window.location.href='registration.html'">Register</button>
-                            <button onclick="window.location.href='login.html'">Login</button>
-                            <button onclick="closePopup()">Cancel</button>
-                        </div>
-                    </div>
 
                     <span id="user-info" style="display: none;">
                         <strong id="username-display"></strong>
@@ -94,7 +86,44 @@
                                 }
                             });
                         }
-                    });            
+                    });
+                    
+                    document.addEventListener("DOMContentLoaded", function(){
+                        const slides = document.querySelector(".slides");
+                        const images = document.querySelectorAll(".slides img");
+                        const prevBtn = document.querySelector(".prev");
+                        const nextBtn = document.querySelector(".next");
+                        const bannerBg = document.querySelector(".banner-bg");
+                        let currentIndex = 0;
+                        const totalImages = images.length;
+                        
+                        function updateSlider(){
+                            // Update the slide position
+                            slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+                            // Update the blurred background image to match the current slide
+                            bannerBg.style.backgroundImage = `url('${images[currentIndex].src}')`;
+                        }
+                        
+                        nextBtn.addEventListener("click", function(){
+                            currentIndex = (currentIndex + 1) % totalImages;
+                            updateSlider();
+                        });
+                        
+                        prevBtn.addEventListener("click", function(){
+                            currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+                            updateSlider();
+                        });
+                        
+                        // Auto cycle every 5 seconds
+                        setInterval(function(){
+                            currentIndex = (currentIndex + 1) % totalImages;
+                            updateSlider();
+                        }, 5000);
+
+                        // Initialize the background for the first image
+                        updateSlider();
+                    });
+
                 </script>
                 
                 <div class="select-container">
@@ -108,11 +137,19 @@
         </section>
         <main>
             <div class="banner">
-                <img src="images/banner.jpeg" alt="banner">
-                <img src="images/banner4.jpeg" alt="banner4">
-                <img src="images/banner2.jpeg" alt="banner2">
-                <img src="images/banner3.jpeg" alt="banner3">
-                <img src="images/banner1.jpeg" alt="banner1">
+                <!-- Blurred Background Layer -->
+                <div class="banner-bg"></div>
+              
+                <!-- Slides Container -->
+                <div class="slides">
+                    <img src="images/banner.jpeg" alt="banner">
+                    <img src="images/banner4.jpeg" alt="banner4">
+                    <img src="images/banner2.jpeg" alt="banner2">
+                    <img src="images/banner3.jpeg" alt="banner3">
+                    <img src="images/banner1.jpeg" alt="banner1">
+                </div>
+                <button class="prev">&#10094;</button>
+                <button class="next">&#10095;</button>
             </div>
             <section>
                 <h2>CATEGORY BY BRAND</h2>
@@ -200,6 +237,14 @@
             </div>
             <p class="rights">&copy; 2024 All Rights Reserved</p>
         </footer>
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <p>Do you want to Register or Login?</p>
+                <button onclick="window.location.href='registration.html'">Register</button>
+                <button onclick="window.location.href='login.html'">Login</button>
+                <button onclick="closePopup()">Cancel</button>
+            </div>
+        </div>
         <script src="script.js"></script>
     </body>
 </html>   

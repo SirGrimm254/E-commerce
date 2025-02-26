@@ -94,3 +94,18 @@ document.addEventListener("DOMContentLoaded", function () {
         location.reload(); // Reload page to show "Account" button again
     });
 });
+
+function openPopup1() {
+    document.getElementById("popup1").style.display = "flex";
+}
+
+function closePopup1() {
+    document.getElementById("popup1").style.display = "none";
+}
+
+window.onclick = function(event) {
+    var popup1 = document.getElementById('popup1');
+    if (event.target === popup1) {
+        closePopup1();
+    }
+}

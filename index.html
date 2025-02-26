@@ -40,15 +40,7 @@
             <div class="selection">
                 <div id="account-section">
                     <input type="button" id="account-btn" value="👤 Account" onclick="openPopup()">
-                    <div id="popup" class="popup">
-                        <div class="popup-content">
-                            <p>Do you want to Register or Login?</p>
-                            <button onclick="window.location.href='registration.html'">Register</button>
-                            <button onclick="window.location.href='login.html'">Login</button>
-                            <button onclick="closePopup()">Cancel</button>
-                        </div>
-                    </div>
-
+                    
                     <span id="user-info" style="display: none;">
                         <strong id="username-display"></strong>
                         <button id="logout-btn">Logout</button>
@@ -143,7 +135,7 @@
                 </div>
             </div>
         </section>
-        <main>
+        <main class="main">
             <div class="banner">
                 <!-- Blurred Background Layer -->
                 <div class="banner-bg"></div>
@@ -272,6 +264,14 @@
             </div>
             <p class="rights">&copy; 2024 All Rights Reserved</p>
         </footer>
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <p>Do you want to Register or Login?</p>
+                <button onclick="window.location.href='registration.html'">Register</button>
+                <button onclick="window.location.href='login.html'">Login</button>
+                <button onclick="closePopup()">Cancel</button>
+            </div>
+        </div>
         <script src="script.js"></script>
     </body>
 </html>
