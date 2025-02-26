@@ -7,7 +7,7 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    margin-bottom: 100%;
+    height: 100%;
     max-width: 100%;
 }
 
@@ -577,45 +577,47 @@ footer {
     bottom: 0;
     left: 0;
     width: 100vw;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-items: center;
+    align-content: center;
     background-color: blueviolet;
     color: bisque;
     transition: transform 0.3s ease, opacity 0.3s ease;
     z-index: 1000;
 }
 
-.contact {
+.footer-section {
+    background-color: #999;
+    order: 9999;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 5px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    height: 400px;
 }
 
-.contact p {
-    margin: 0;
-    padding: 0;
-}
-
-.rights {
-    display: flex;
-    align-content: flex-end;
-    margin-right: 50px;
+.footer-items {
+    margin-top: -130px;
 }
 
 .social-icons {
+    display: flex;
     justify-content: center;
     align-items: center;
+    gap: 20px;
+    padding: 10px;
 }
 
 .social-icons a {
-    color: darkgrey;
+    color: rgb(175, 22, 22);
     font-size: 27px;
     transition: 0.3s;
 }
 
 .social-icons a:hover {
     color: white;
+}
+
+.lastborn {
+    text-align: center;    
 }
 
