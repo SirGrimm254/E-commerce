@@ -101,7 +101,7 @@ nav ul li a:hover {
     }
 
     nav ul {
-        flex-direction: column;
+        flex-direction: row;
         gap: 10px;
     }
 
@@ -219,23 +219,23 @@ nav ul li a:hover {
     }
 
     .search {
-        width: 100%;
+        width: 100dvw;
         justify-content: center;
     }
 
     .selection {
         flex-direction: column;
         align-items: center;
-        width: 100%;
+        width: 100dvw;
     }
 
     #account-section, .select-container {
-        width: 100%;
+        width: 100dvw;
         text-align: center;
     }
 
     #account-btn, #logout-btn {
-        width: 100%;
+        width: 100dvw;
     }
 }
 
