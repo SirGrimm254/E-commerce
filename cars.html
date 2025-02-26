@@ -124,6 +124,37 @@
                         updateSlider();
                     });
 
+                    document.addEventListener("DOMContentLoaded", function () {
+                    const settings = document.querySelector(".settings");
+                    const stickyOffset = settings.offsetTop; // Initial top position of settings
+                    let lastScrollY = window.scrollY;
+                    
+                    window.addEventListener("scroll", function () {
+                        const currentScrollY = window.scrollY;
+                        
+                        // When we pass the original settings position, add the sticky class.
+                        if (currentScrollY >= stickyOffset) {
+                        settings.classList.add("sticky");
+                        // If scrolling down, keep it visible.
+                        if (currentScrollY > lastScrollY) {
+                            settings.style.transform = "translateY(0)";
+                            settings.style.opacity = "1";
+                        } else {
+                            // If scrolling up, slide it out (hide it)
+                            settings.style.transform = "translateY(-100%)";
+                            settings.style.opacity = "0";
+                        }
+                        } else {
+                        // If before the sticky point, remove sticky behavior.
+                        settings.classList.remove("sticky");
+                        settings.style.transform = "translateY(0)";
+                        settings.style.opacity = "1";
+                        }
+                        
+                        lastScrollY = currentScrollY;
+                        });
+                    });
+
                 </script>
                 
                 <div class="select-container">
