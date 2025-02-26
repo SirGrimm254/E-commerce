@@ -98,6 +98,7 @@ nav ul li a:hover {
     header {
         flex-direction: column;
         text-align: center;
+        max-height: 200px;
     }
 
     .logo-title {
@@ -107,10 +108,17 @@ nav ul li a:hover {
     nav ul {
         display: flex;
         gap: 10px;
+        padding: 10px;
+        justify-content: center;
+        align-items: center;
     }
 
     .navigation {
         width: 100%;
+    }
+
+    .settings {
+        justify-content: center;
     }
 }
 
@@ -154,6 +162,7 @@ nav ul li a:hover {
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    max-width: 1005;
 }
 
 .search input[type="submit"] {
@@ -163,6 +172,7 @@ nav ul li a:hover {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    max-width: 100%;
 }
 
 #account-section {
@@ -176,6 +186,7 @@ nav ul li a:hover {
     font-size: 16px;
     cursor: pointer;
     border-radius: 5px;
+    max-width: 100%;
 }
 
 /* User Info */
