@@ -126,6 +126,10 @@ nav ul li a:hover {
     .search {
         width: 100%;
     }
+
+    #account-btn {
+        width: 100%;
+    }
 }
 
 .settings {
