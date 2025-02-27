@@ -24,7 +24,7 @@
                     <div id="popup1" class="popup1">
                         <div class="popup1-content">
                             <p>You have to be Registered or Logged In to Sell your Car?</p>
-                            <button onclick="redirectToSell()">Register</button>
+                            <button onclick="window.location.href='registration.html'">Register</button>
                             <button onclick="window.location.href='login.html'">Login</button>
                             <button onclick="closePopup1()">Cancel</button>
                         </div>
@@ -178,6 +178,28 @@
                         lastScrollY = currentScrollY;
                         });
                     });
+
+                    document.addEventListener("DOMContentLoaded", function () {
+                        let countdown = 5;
+                        let button = document.getElementById("ad-button");
+                        let adContainer = document.getElementById("ad-container");
+
+                        let timer = setInterval(() => {
+                            if (countdown > 0) {
+                                button.textContent;
+                                countdown--;
+                            } else {
+                                clearInterval(timer);
+                                button.textContent = "X";
+                                button.disabled = false;
+                                button.classList.add("enabled");
+                            }
+                        }, 1000);
+
+                        button.addEventListener("click", function () {
+                            adContainer.style.display = "none";
+                        });
+                    });
                 </script>
                 
                 <div class="select-container">
@@ -273,6 +295,11 @@
                             <input type="button" value="RESERVE THIS CAR">
                         </div>
                     </div>
+                </div>
+                <div id="ad-container">
+                    <p>This website is on sale!</p>
+                    <p>Check for contacts below page</p>
+                    <button id="ad-button" disabled>X</button>
                 </div>
             </section>
             <section class="footer">
