@@ -215,8 +215,10 @@
                         let button = document.getElementById("close-ad");
                         let adContainer = document.getElementById("ads-container");
                         let progress = document.getElementById("progress");
+                        let overlay = document.getElementById("overlay");
 
                         adContainer.style.display = "block";
+                        overlay.style.display = "block";
 
                         // Animate circular countdown
                         progress.style.strokeDashoffset = "0";
@@ -229,6 +231,7 @@
                         button.addEventListener("click", function () {
                             if (!button.disabled) {
                                 adContainer.style.display = "none";
+                                overlay.style.display = "none";
                                 progress.style.strokeDashoffset = "113"; // Reset progress for next ad
                             }
                         });
@@ -367,6 +370,7 @@
                     <p>Check for contacts below page</p>
                     <button id="ad-button" disabled>X</button>
                 </div>
+                <div id="overlay"></div>    
                 <div id="ads-container">
                     <div class="progress-circle">
                         <svg width="40" height="40">
