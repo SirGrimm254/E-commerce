@@ -605,6 +605,67 @@ h3 {
     cursor: pointer;
 }
 
+#ads-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    padding: 20px;
+    background-color: white;
+    border: 2px solid black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    z-index: 1000;
+    border-radius: 10px;
+}
+
+.progress-circle {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 40px;
+    height: 40px;
+}
+
+svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(-90deg);
+}
+
+circle {
+    fill: none;
+    stroke: gray;
+    stroke-width: 4;
+    stroke-dasharray: 113;
+    stroke-dashoffset: 113;
+    transition: stroke-dashoffset 5s linear;
+}
+
+#progress {
+    stroke: red;
+}
+
+#close-ad {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    text-align: center;
+    background-color: transparent;
+    color: black;
+    border: none;
+    cursor: not-allowed;
+}
+
+#close-ad.enabled {
+    cursor: pointer;
+}
+
 footer {
     position: fixed;
     bottom: 0;

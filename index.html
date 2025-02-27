@@ -210,6 +210,35 @@
                             adContainer.style.display = "none";
                         });
                     });
+
+                    function showAd() {
+                        let button = document.getElementById("close-ad");
+                        let adContainer = document.getElementById("ads-container");
+                        let progress = document.getElementById("progress");
+
+                        adContainer.style.display = "block";
+
+                        // Animate circular countdown
+                        progress.style.strokeDashoffset = "0";
+
+                        setTimeout(() => {
+                            button.classList.add("enabled");
+                            button.disabled = false;
+                        }, 5000);
+
+                        button.addEventListener("click", function () {
+                            if (!button.disabled) {
+                                adContainer.style.display = "none";
+                                progress.style.strokeDashoffset = "113"; // Reset progress for next ad
+                            }
+                        });
+                    }
+
+                    // Show ad every 10 minutes (600,000ms)
+                    setInterval(showAd, 30000);
+
+                    // Show ad immediately when page loads
+                    document.addEventListener("DOMContentLoaded", showAd);
                 </script>
                 
                 <div class="select-container">
@@ -337,6 +366,17 @@
                     <p>This website is on sale!</p>
                     <p>Check for contacts below page</p>
                     <button id="ad-button" disabled>X</button>
+                </div>
+                <div id="ads-container">
+                    <div class="progress-circle">
+                        <svg width="40" height="40">
+                            <circle cx="20" cy="20" r="18"></circle>
+                            <circle cx="20" cy="20" r="18" id="progress"></circle>
+                        </svg>
+                        <button id="close-ad" disabled>✖</button>
+                    </div>
+                    <p>Buy this site</p>
+                    <p>NOW!</p>
                 </div>
             </section>
             <section class="footer">
